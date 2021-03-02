@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+{
+    int choice;
+    do{
+        cout << "1. Them sach vao thu vien. "<<endl;
+        cout << "2. Cho muon sach ."<<endl;
+        cout << "3. Tra sach. "<<endl;
+        cout << "4. Hien thi tat ca cac cuon sach. "<<endl;
+        cout << "5. Hien thi tat ca cac cuon sach co the muon. "<<endl;
+        cout << "6. Tim kiem sach theo ten . "<<endl;
+        cout << "7. Nap du lieu tu file. "<<endl;
+        cout << "8. Thoat. "<<endl;
+        cout << "Moi ban nhap [1-8] :  "<<endl;
+        cin>> choice;
+        switch(choice){
+        case 1:
+            break;
+        }
+        cout<<endl;
+    }while(choice!=8);
+    return 0;
+}
