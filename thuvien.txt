@@ -1,28 +1,245 @@
 #include <iostream>
-
+#include <cstring>
 using namespace std;
 
+class Book
+{
+private:
+    string idBook;
+    string nameBook;
+    string NXB;
+    string author;
+    string type;
+    int yearXB;
+    bool borrow;
+
+public:
+
+    Book();
+    Book(string, string, string, string, string int);
+
+    void setIdBook(string idBook);
+    void setNameBook(string nameBook);
+    void setNXB(string NXB);
+    void setAuthor(string author);
+    void setType(string type);
+    void setYearXB(int yearXB);
+    void setBorrow(bool borrow);
+
+    string getIdBook();
+    string getNameBook();
+    string getNXB();
+    string getAuthor();
+    string getType();
+    int getYearXB();
+    bool getBorrow();
+
+};
+Book::Book() {
+    this->idBook[0] = '\0';
+    this->nameBook[0] = '\0';
+    this->author[0] = '\0';
+    this->NXB[0] = '\0';
+    this->author[0] = '\0';
+    this->type[0] = '\0';
+    this->yearXB = yearXB;
+    this->borrow = borrow;
+}
+Book::Book() {
+    this->idBook = idBook;
+    this->nameBook = nameBook;
+    this->NXB = NXB;
+    this->author = author;
+    this->type= type;
+    this->yearXB = 1900;
+    this->borrow = 1;
+}
+void Book::setIdBook(string idBook) {
+    idBook = this->idBook;
+}
+void Book::setNameBook(string nameBook) {
+    nameBook = this->nameBook;
+}
+void Book::setNXB(string NXB) {
+    NXB = this->NXB;
+}
+void Book::setAuthor(string author) {
+    author = this->author;
+}
+void Book::setType(string type) {
+    type = this->type;
+}
+void Book::setYearXB(int yearXB) {
+    yearXB = this->yearXB;
+}
+void Book::setBorrow(bool borrow) {
+    borrow = this->borrow;
+}
+string Book::getIdBook() {
+    return idBook;
+}
+string Book::getNameBook() {
+    return nameBook;
+}
+string Book::getNXB() {
+    return NXB;
+}
+string Book::getAuthor() {
+    return author;
+}
+string Book::getType() {
+    return type;
+}
+int Book::getYearXB() {
+    return yearXB;
+}
+bool Book::getBorrow() {
+    return borrow;
+}
+
+
+class Reader
+{
+private:
+    string id;
+    string name;
+    int age;
+    int born;
+    int phoneNumber;
+    string address;
+
+public:
+    Reader();
+    Reader(string, string, int, int, int);
+    
+    void setId(string id);
+    void setName(string name);
+    void setAge(int age);
+    void setBorn(int born);
+    void setPhoneNuber(int phoneNumber);
+    void setAddress(string address);
+
+
+    string getId();
+    string getName();
+    int getAge();
+    int getBorn();
+    int getPhoneNumber();
+    string getAddress();
+};
+Reader::Reader(){
+    this->id = '\0';
+    this->name = '\0';
+    this->age = 0;
+    this->born = 1900;
+    this->phoneNumber = 0;
+    this->address = '\0';
+}
+Reader::Reader() {
+    id = this->id;
+    name = this->name;
+    age = this->age;
+    born = this->born;
+    phoneNumber = this->phoneNumber;
+    address = this->address;
+}
+void Reader::setId(string id) {
+    id = this->id;
+}
+void Reader::setName(string name) {
+    name = this->name;
+}
+void Reader::setAge(int age) {
+    age = this->age;
+}
+void Reader::setBorn(int born) {
+    born = this->born;
+}
+void Reader::setPhoneNuber(int phoneNumber) {
+    phoneNumber = this->phoneNumber;
+}
+void Reader::setAddress(string address) {
+    address = this->address;
+}
+
+string Reader::getId() {
+    return id;
+}
+string Reader::getName() {
+    return name;
+}
+int Reader::getAge() {
+    return age;
+}
+int Reader::getBorn() {
+    return born;
+}
+int Reader::getPhoneNumber() {
+    return phoneNumber;
+}
+string Reader::getAddress() {
+    return  address;
+}
 
 
 int main()
 {
     int choice;
-    do{
-        cout << "1. Them sach vao thu vien. "<<endl;
-        cout << "2. Cho muon sach ."<<endl;
-        cout << "3. Tra sach. "<<endl;
-        cout << "4. Hien thi tat ca cac cuon sach. "<<endl;
-        cout << "5. Hien thi tat ca cac cuon sach co the muon. "<<endl;
-        cout << "6. Tim kiem sach theo ten . "<<endl;
-        cout << "7. Nap du lieu tu file. "<<endl;
-        cout << "8. Thoat. "<<endl;
-        cout << "Moi ban nhap [1-8] :  "<<endl;
-        cin>> choice;
-        switch(choice){
+    do {
+        cout << "1. Them sach vao thu vien. " << endl;
+        cout << "2. Cho muon sach ." << endl;
+        cout << "3. Tra sach. " << endl;
+        cout << "4. Hien thi tat ca cac cuon sach. " << endl;
+        cout << "5. Hien thi tat ca cac cuon sach co the muon. " << endl;
+        cout << "6. Tim kiem sach theo ten . " << endl;
+        cout << "7. Nap du lieu tu file. " << endl;
+        cout << "8. Thoat. " << endl;
+        cout << "Moi ban nhap [1-8] :  " << endl;
+        cin >> choice;
+        switch (choice) {
         case 1:
+        {
+            addBook();
             break;
         }
-        cout<<endl;
-    }while(choice!=8);
+        case 2:
+        {
+            borrowBook();
+            break;
+        }
+        case 3:
+        {
+            traBook();
+            break;
+        }
+        case 4:
+        {
+            allBook();
+            break();
+        }
+        case 5:
+        {
+            allBookBorrow();
+            break;
+        }
+        case 6:
+        {
+            searchBook();
+            break;
+        }
+        case 7:
+        {
+            readFile();
+            break;
+        }
+        case 8:
+        {
+            cout << " Thank you for using " << endl;
+            break;
+        }
+
+        cout << endl;
+    } while (choice != 8);
     return 0;
 }
+
